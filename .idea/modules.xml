@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Highway_Ticket_ManagementSystem_Microservice.iml" filepath="$PROJECT_DIR$/.idea/Highway_Ticket_ManagementSystem_Microservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ServiceRegisterSever/ServiceRegisterSever.iml" filepath="$PROJECT_DIR$/ServiceRegisterSever/ServiceRegisterSever.iml" />
+      <module fileurl="file://$PROJECT_DIR$/api-gateway/src/main/main.iml" filepath="$PROJECT_DIR$/api-gateway/src/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user-service/src/main/main1.iml" filepath="$PROJECT_DIR$/user-service/src/main/main1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/config-sever/src/main/main2.iml" filepath="$PROJECT_DIR$/config-sever/src/main/main2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-registry-sever/src/main/main3.iml" filepath="$PROJECT_DIR$/service-registry-sever/src/main/main3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/config-sever/src/test/test.iml" filepath="$PROJECT_DIR$/config-sever/src/test/test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/api-gateway/src/test/test1.iml" filepath="$PROJECT_DIR$/api-gateway/src/test/test1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-registry-sever/src/test/test2.iml" filepath="$PROJECT_DIR$/service-registry-sever/src/test/test2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user-service/src/test/test3.iml" filepath="$PROJECT_DIR$/user-service/src/test/test3.iml" />
+    </modules>
+  </component>
+</project>
