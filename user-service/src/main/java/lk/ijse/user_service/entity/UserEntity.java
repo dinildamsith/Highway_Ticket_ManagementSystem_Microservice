@@ -17,7 +17,7 @@ import java.util.List;
 @Table(name = "user")
 public class UserEntity implements SuperEntity{
     @Id
-    private String userId;
+    private String userMail;
     private String userName;
     private String password;
 
