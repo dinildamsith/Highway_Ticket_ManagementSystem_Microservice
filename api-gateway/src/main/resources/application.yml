@@ -4,14 +4,14 @@ server:
 spring:
   application:
     name: api-gateway
-#  cloud:
-#    gateway:
-#      mvc:
-#        routes:
-#          - id: user-service
-#            uri: lb://user-service
-#            predicates:
-#              - Path=/api/v1/user/**
+  cloud:
+    gateway:
+      mvc:
+        routes:
+          - id: user-service
+            uri: lb://user-service
+            predicates:
+              - Path=/api/v1/user/**
 #          - id: item-service
 #            uri: lb://item-service
 #            predicates:
