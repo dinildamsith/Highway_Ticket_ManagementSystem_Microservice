@@ -28,4 +28,10 @@ public class UserController {
     public void userUpdate(@PathVariable("updateUserId") String updateUserId ,@RequestBody UserDTO userDTO){
         userServices.updateUser(updateUserId,userDTO);
     }
+
+    @DeleteMapping
+    @RequestMapping("/delete/{deleteUserId}")
+    public void userDelete(@PathVariable ("deleteUserId") String deleteUserId){
+        userServices.deleteUser(deleteUserId);
+    }
 }

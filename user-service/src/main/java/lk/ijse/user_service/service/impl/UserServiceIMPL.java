@@ -58,5 +58,11 @@ public class UserServiceIMPL implements UserServices {
     @Override
     public void deleteUser(String deleteUserId) {
 
+        if (userRepo.existsById(deleteUserId)){
+              userRepo.deleteById(deleteUserId);
+        }else{
+              logger.info("This Id Have No User");
+        }
+
     }
 }
