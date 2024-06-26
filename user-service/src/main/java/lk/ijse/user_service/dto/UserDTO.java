@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserDTO implements SuperDTO{
+    private String userId;
     private String userMail;
     private String userName;
     private String password;
