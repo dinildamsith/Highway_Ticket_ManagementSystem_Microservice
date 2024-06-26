@@ -34,12 +34,12 @@ public class UserServiceIMPL implements UserServices {
     }
 
     @Override
-    public void updateUser(UserDTO userDTO) {
+    public void updateUser(String updateUserId ,UserDTO userDTO) {
 
     }
 
     @Override
-    public void deleteUser(UserDTO userDTO) {
+    public void deleteUser(String deleteUserId) {
 
     }
 }
