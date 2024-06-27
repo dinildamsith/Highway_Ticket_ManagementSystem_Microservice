@@ -12,7 +12,7 @@ public class PaymentDTO {
     private String paymentId;
     private String paymentTime;
     private String status;
-    private String paymentPrice;
+    private Double paymentPrice;
     private Double cash;
     private Double balance;
     private TicketEntity ticket;
