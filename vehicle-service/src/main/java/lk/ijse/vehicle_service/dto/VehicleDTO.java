@@ -7,8 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class VehicleDTO implements SuperDTO {
+public class   VehicleDTO implements SuperDTO {
     private String vehicleId;
     private String vehicleNumber;
     private String vehicleType;
+    private String userId;
 }
