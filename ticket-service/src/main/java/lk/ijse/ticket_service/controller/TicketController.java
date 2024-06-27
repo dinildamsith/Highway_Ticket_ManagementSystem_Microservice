@@ -37,4 +37,17 @@ public class TicketController {
         String ticketDetails = ticketServices.getTicketDetails(ticketId);
         return ticketDetails;
     }
+
+    @GetMapping
+    @RequestMapping("/ticketHaveCheck/{ticketId}")
+    public boolean alreadyTicketHaveCheck(@PathVariable ("ticketId") String ticketId){
+        boolean b = ticketServices.alreadyTicketHaveCheck(ticketId);
+        return b;
+    }
+
+    @PostMapping
+    @RequestMapping("/statusUpdate/{ticketId}")
+    public void ticketStatusUpdate(@PathVariable ("ticketId") String ticketId){
+        ticketServices.ticketStatusUpdate(ticketId);
+    }
 }

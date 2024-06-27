@@ -91,4 +91,17 @@ public class TicketServiceIMPL implements TicketServices {
         }
         return null;
     }
+
+    @Override
+    public boolean alreadyTicketHaveCheck(String ticketId) {
+        boolean ticektHaveCheck = ticketRepo.existsById(ticketId);
+        return ticektHaveCheck;
+    }
+
+    @Override
+    public void ticketStatusUpdate(String ticketId) {
+        TicketEntity ticketEntity = ticketRepo.findById(ticketId).orElse(null);
+        ticketEntity.setStatus("PAID");
+        ticketRepo.save(ticketEntity);
+    }
 }
