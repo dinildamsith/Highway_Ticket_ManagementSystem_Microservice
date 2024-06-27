@@ -5,6 +5,8 @@ import lk.ijse.vehicle_service.service.VehicleServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("api/v1/vehicleService")
 public class VehicleController {
@@ -33,5 +35,12 @@ public class VehicleController {
     @RequestMapping("/delete/{deleteVehicleId}")
     public void deleteVehicle(@PathVariable ("deleteVehicleId") String deleteVehicleId){
         vehicleServices.deleteVehicle(deleteVehicleId);
+    }
+
+    @GetMapping
+    @RequestMapping("/getAllVehicles")
+    public List<VehicleDTO> getAllVehicles(){
+        List<VehicleDTO> allVehicles = vehicleServices.getAllVehicles();
+        return allVehicles;
     }
 }

@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 @RequiredArgsConstructor
 public class DataConvert {
@@ -21,4 +23,7 @@ public class DataConvert {
         return modelMapper.map(vehicleDTO, VehicleEntity.class);
     }
 
+    public List<VehicleDTO> vehicleEntityListConvertVehicleDTOList(List<VehicleEntity> vehicleEntityList){
+        return modelMapper.map(vehicleEntityList, List.class);
+    }
 }
