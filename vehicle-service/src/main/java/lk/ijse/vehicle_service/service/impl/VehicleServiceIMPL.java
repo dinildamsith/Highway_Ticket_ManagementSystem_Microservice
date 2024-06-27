@@ -4,11 +4,13 @@ import jakarta.transaction.Transactional;
 import lk.ijse.vehicle_service.convert.DataConvert;
 import lk.ijse.vehicle_service.dao.VehicleRepo;
 import lk.ijse.vehicle_service.dto.VehicleDTO;
+import lk.ijse.vehicle_service.entity.VehicleEntity;
 import lk.ijse.vehicle_service.service.VehicleServices;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -19,12 +21,14 @@ public class VehicleServiceIMPL implements VehicleServices {
     @Autowired
     VehicleRepo vehicleRepo;
 
+    @Autowired
     DataConvert dataConvert;
 
     Logger logger = LoggerFactory.getLogger(VehicleServiceIMPL.class);
 
     @Override
-    public void registerVehicle(VehicleDTO vehicleDTO) {
+    public void registerVehicle(@RequestBody  VehicleDTO vehicleDTO) {
+
 
         if (vehicleRepo.existsById(vehicleDTO.getVehicleId())){
             logger.info("This Id Have Already register Vehicle");
