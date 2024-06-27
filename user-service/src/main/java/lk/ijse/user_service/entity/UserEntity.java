@@ -19,11 +19,4 @@ public class UserEntity implements SuperEntity{
     private String userName;
     private String password;
 
-    @ManyToMany
-    @JoinTable(
-            name = "user_vehicles", // Name of the join table
-            joinColumns = @JoinColumn(name = "user_id"), // Foreign key column for UserEntity
-            inverseJoinColumns = @JoinColumn(name = "vehicle_id") // Foreign key column for VehicleEntity
-    )
-    private List<VehicleEntity> vehicles;
 }
