@@ -41,6 +41,16 @@ public class VehicleServiceIMPL implements VehicleServices {
     @Override
     public void updateVehicle(String updateVehicleId, VehicleDTO vehicleDTO) {
 
+        if (vehicleRepo.existsById(updateVehicleId)){
+            VehicleEntity updateVehicleEntity = vehicleRepo.findById(updateVehicleId).orElse(null);
+            updateVehicleEntity.setVehicleNumber(vehicleDTO.getVehicleNumber());
+            updateVehicleEntity.setVehicleType(vehicleDTO.getVehicleType());
+            updateVehicleEntity.setUsers(vehicleDTO.getUsers());
+
+            vehicleRepo.save(updateVehicleEntity);
+        }else{
+            logger.info("This Id Have No Vehicles");
+        }
     }
 
     @Override

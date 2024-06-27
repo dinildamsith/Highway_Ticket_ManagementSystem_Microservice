@@ -3,10 +3,7 @@ package lk.ijse.vehicle_service.controller;
 import lk.ijse.vehicle_service.dto.VehicleDTO;
 import lk.ijse.vehicle_service.service.VehicleServices;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/v1/vehicleService")
@@ -24,5 +21,11 @@ public class VehicleController {
     @RequestMapping("/register")
     public void registerVehicle(@RequestBody VehicleDTO vehicleDTO){
         vehicleServices.registerVehicle(vehicleDTO);
+    }
+
+    @PutMapping
+    @RequestMapping("/update/{updateVehicleId}")
+    public void updateVehicle(@PathVariable ("updateVehicleId") String updateVehicleId , @RequestBody VehicleDTO vehicleDTO){
+        vehicleServices.updateVehicle(updateVehicleId,vehicleDTO);
     }
 }
