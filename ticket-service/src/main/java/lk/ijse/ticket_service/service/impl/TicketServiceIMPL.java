@@ -74,7 +74,21 @@ public class TicketServiceIMPL implements TicketServices {
     }
 
     @Override
-    public TicketDTO getTicketDetails(String ticketId) {
+    public String getTicketDetails(String ticketId) {
+
+        if (ticketRepo.existsById(ticketId)){
+            TicketEntity ticket = ticketRepo.findById(ticketId).orElse(null);
+            return  ticket.getTicketId() + "\n" +
+                    ticket.getEntranceLocation() + "\n" +
+                    ticket.getExitLocation() + "\n" +
+                    ticket.getStatus() + "\n" +
+                    ticket.getTicketIssueTime() + "\n" +
+                    ticket.getOneKmPrice() + "\n" +
+                    ticket.getTotalKm() + "\n" +
+                    ticket.getPrice();
+        }else{
+            logger.info("This Id Have No Ticket");
+        }
         return null;
     }
 }

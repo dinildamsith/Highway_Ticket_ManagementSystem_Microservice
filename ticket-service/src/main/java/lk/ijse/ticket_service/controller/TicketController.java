@@ -30,4 +30,11 @@ public class TicketController {
         String ticket = ticketServices.updateTicket(updateTicketId,ticketDTO);
         return ticket;
     }
+
+    @GetMapping
+    @RequestMapping("/getTicketDetails/{ticketId}")
+    public String getTicketDetails(@PathVariable ("ticketId") String ticketId){
+        String ticketDetails = ticketServices.getTicketDetails(ticketId);
+        return ticketDetails;
+    }
 }
