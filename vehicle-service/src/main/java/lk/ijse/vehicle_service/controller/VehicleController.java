@@ -28,4 +28,10 @@ public class VehicleController {
     public void updateVehicle(@PathVariable ("updateVehicleId") String updateVehicleId , @RequestBody VehicleDTO vehicleDTO){
         vehicleServices.updateVehicle(updateVehicleId,vehicleDTO);
     }
+
+    @DeleteMapping
+    @RequestMapping("/delete/{deleteVehicleId}")
+    public void deleteVehicle(@PathVariable ("deleteVehicleId") String deleteVehicleId){
+        vehicleServices.deleteVehicle(deleteVehicleId);
+    }
 }

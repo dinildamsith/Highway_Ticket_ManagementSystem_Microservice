@@ -56,6 +56,11 @@ public class VehicleServiceIMPL implements VehicleServices {
     @Override
     public void deleteVehicle(String deleteVehicleId) {
 
+        if (vehicleRepo.existsById(deleteVehicleId)){
+             vehicleRepo.deleteById(deleteVehicleId);
+        }else{
+            logger.info("This Id Have No Vehicle");
+        }
     }
 
     @Override
