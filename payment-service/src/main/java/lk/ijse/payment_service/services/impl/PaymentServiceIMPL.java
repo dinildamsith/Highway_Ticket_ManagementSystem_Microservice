@@ -40,6 +40,10 @@ public class PaymentServiceIMPL implements PaymentServices {
                 PaymentEntity paymentEntity = dataConvert.paymentDTOConvertPaymentEntity(paymentDTO);
                 paymentEntity.setBalance(paymentEntity.getCash() - paymentEntity.getPaymentPrice());
                 paymentRepo.save(paymentEntity);
+
+                String response = restTemplate.postForObject("http://localhost:8082/api/v1/ticketService/statusUpdate/" + paymentDTO.getTicket().getTicketId(), null, String.class);
+                System.out.println(response);
+
             }else{
                 logger.info("This Id Have No Ticket");
             }
