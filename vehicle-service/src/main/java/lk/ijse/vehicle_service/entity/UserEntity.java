@@ -2,10 +2,13 @@ package lk.ijse.vehicle_service.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -19,4 +22,8 @@ public class UserEntity implements SuperEntity{
     private String userName;
     private String password;
 
+
+
+    @OneToMany(mappedBy = "users")
+    private List<VehicleEntity> vehicles;
 }

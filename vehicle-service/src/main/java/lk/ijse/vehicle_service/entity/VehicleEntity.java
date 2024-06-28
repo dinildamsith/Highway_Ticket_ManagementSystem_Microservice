@@ -18,7 +18,7 @@ public class VehicleEntity implements SuperEntity{
     private String vehicleNumber;
     private String vehicleType;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "userId")  // Change the column name here
     private UserEntity users;
 }
