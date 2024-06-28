@@ -37,12 +37,16 @@ public class PaymentServiceIMPL implements PaymentServices {
 
             boolean alreadyTicketHaveCheck = restTemplate.getForObject("http://localhost:8082/api/v1/ticketService/ticketHaveCheck/"+paymentDTO.getTicket().getTicketId(), Boolean.class);
             if (alreadyTicketHaveCheck){
-                PaymentEntity paymentEntity = dataConvert.paymentDTOConvertPaymentEntity(paymentDTO);
-                paymentEntity.setBalance(paymentEntity.getCash() - paymentEntity.getPaymentPrice());
-                paymentRepo.save(paymentEntity);
+                if (paymentDTO.getPaymentPrice() <= paymentDTO.getCash()){
+                    PaymentEntity paymentEntity = dataConvert.paymentDTOConvertPaymentEntity(paymentDTO);
+                    paymentEntity.setBalance(paymentEntity.getCash() - paymentEntity.getPaymentPrice());
+                    paymentRepo.save(paymentEntity);
 
-                String response = restTemplate.postForObject("http://localhost:8082/api/v1/ticketService/statusUpdate/" + paymentDTO.getTicket().getTicketId(), null, String.class);
-                System.out.println(response);
+                    restTemplate.postForObject("http://localhost:8082/api/v1/ticketService/statusUpdate/" + paymentDTO.getTicket().getTicketId(), null, String.class);
+                    logger.info("Payment Success and Ticket Status Updated...");
+                }else{
+                    logger.info("This amount is insufficient to cover the payment");
+                }
 
             }else{
                 logger.info("This Id Have No Ticket");
