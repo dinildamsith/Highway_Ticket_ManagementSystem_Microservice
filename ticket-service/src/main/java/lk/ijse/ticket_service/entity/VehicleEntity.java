@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,5 +18,8 @@ public class VehicleEntity implements SuperEntity{
     private String vehicleNumber;
     private String vehicleType;
 
+
+    @OneToMany(mappedBy = "vehicle")
+    private List<TicketEntity> ticket;
 
 }

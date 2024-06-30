@@ -47,7 +47,8 @@ public class TicketController {
 
     @PostMapping
     @RequestMapping("/statusUpdate/{ticketId}")
-    public void ticketStatusUpdate(@PathVariable ("ticketId") String ticketId){
+    public String ticketStatusUpdate(@PathVariable ("ticketId") String ticketId){
         ticketServices.ticketStatusUpdate(ticketId);
+        return "done";
     }
 }
