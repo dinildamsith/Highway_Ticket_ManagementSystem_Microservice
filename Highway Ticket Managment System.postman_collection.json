@@ -1,0 +1,481 @@
+{
+	"info": {
+		"_postman_id": "e08ea155-c366-4109-8d1f-16805ca3eca0",
+		"name": "Highway Ticket Managment System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30946423",
+		"_collection_link": "https://martian-rocket-735587.postman.co/workspace/New-Team-Workspace~e75e1e5f-2e44-4b8f-a1bd-92b8214b1cdd/collection/30946423-e08ea155-c366-4109-8d1f-16805ca3eca0?action=share&source=collection_link&creator=30946423"
+	},
+	"item": [
+		{
+			"name": "User Service",
+			"item": [
+				{
+					"name": "User Service Health Check",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/userService",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"userService"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"U1\",\r\n    \"userMail\":\"dinil@gmail.com\",\r\n    \"userName\":\"dinil\",\r\n    \"password\":\"123\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/v1/userService/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"userService",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userMail\":\"dinil22@gmail.com\",\r\n    \"userName\":\"dini damsith \",\r\n    \"password\":\"1234\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/v1/userService/update/U1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"userService",
+								"update",
+								"U1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/userService/delete/U1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"userService",
+								"delete",
+								"U1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vehicle Service",
+			"item": [
+				{
+					"name": "Vehicle Health Check",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/vehicleService",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"vehicleService"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vehicle Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"vehicleId\": \"V1\",\r\n  \"vehicleNumber\": \"BAS-8038\",\r\n  \"vehicleType\": \"Jip\",\r\n  \"users\": {\r\n    \"userId\": \"U1\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/v1/vehicleService/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"vehicleService",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Vehicle",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"vehicleNumber\": \"BAk-8038\",\r\n  \"vehicleType\": \"Jip\",\r\n  \"users\": {\r\n    \"userId\": \"U1\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/v1/vehicleService/update/V1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"vehicleService",
+								"update",
+								"V1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Vehicle",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/vehicleService/delete/V1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"vehicleService",
+								"delete",
+								"V1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Vehicles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/vehicleService/getAllVehicles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"vehicleService",
+								"getAllVehicles"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ticket Service",
+			"item": [
+				{
+					"name": "Ticket Health Check",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/ticketService",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"ticketService"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ticket Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ticketId\": \"T1\",\r\n    \"entranceLocation\": \"Pandura-E1\",\r\n    \"exitLocation\": \"Galle-E1\",\r\n    \"status\": \"NO PAID\",\r\n    \"ticketIssueTime\": \"7.42 PM\",\r\n    \"oneKmPrice\": 20,\r\n    \"totalKm\": 101,\r\n    \"price\": 0,\r\n    \"vehicle\":{\r\n        \"vehicleId\":\"V1\"\r\n    }\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/v1/ticketService/createTicket",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"ticketService",
+								"createTicket"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ticket Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"entranceLocation\": \"Kottawa-E1\",\r\n    \"exitLocation\": \"Pandura-E1\",\r\n    \"status\": \"Paid\",\r\n    \"ticketIssueTime\": \"2024-06-28\",\r\n    \"oneKmPrice\": 20,\r\n    \"totalKm\": 10,\r\n    \"price\": 0,\r\n    \"vehicle\":{\r\n        \"vehicleId\":\"V1\"\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/v1/ticketService/updateTicket/T3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"ticketService",
+								"updateTicket",
+								"T3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ticket Details get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/ticketService/getTicketDetails/T1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"ticketService",
+								"getTicketDetails",
+								"T1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Already Ticket Have Check",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/ticketService/ticketHaveCheck/T1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"ticketService",
+								"ticketHaveCheck",
+								"T1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ticket Status Update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/ticketService/statusUpdate/T1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"ticketService",
+								"statusUpdate",
+								"T1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payment Service",
+			"item": [
+				{
+					"name": "Payment Health Check",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/v1/paymentService",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"paymentService"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Confirm Payment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"paymentId\":\"P1\",\r\n    \"paymentTime\":\"9.49 PM\",\r\n    \"status\":\"PAID\",\r\n    \"paymentPrice\":2020.00,\r\n    \"cash\":2020.00,\r\n    \"ticket\":{\r\n        \"ticketId\":\"T1\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/v1/paymentService/confirmPayment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"paymentService",
+								"confirmPayment"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
