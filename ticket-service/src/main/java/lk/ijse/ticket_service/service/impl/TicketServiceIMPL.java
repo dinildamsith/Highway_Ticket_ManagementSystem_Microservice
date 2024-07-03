@@ -29,20 +29,20 @@ public class TicketServiceIMPL implements TicketServices {
 
         if (ticketRepo.existsById(ticketDTO.getTicketId())){
             logger.info("This Id Have already Ticket");
+            return "This Id Have already Ticket";
         }else {
             TicketEntity ticket = dataConvert.ticketDTOConvertTicketEntity(ticketDTO);
             ticket.setPrice(ticket.getOneKmPrice() * ticket.getTotalKm());
             ticketRepo.save(ticket);
-            return  ticket.getTicketId() + "\n" +
-                    ticket.getEntranceLocation() + "\n" +
-                    ticket.getExitLocation() + "\n" +
-                    ticket.getStatus() + "\n" +
-                    ticket.getTicketIssueTime() + "\n" +
-                    ticket.getOneKmPrice() + "\n" +
-                    ticket.getTotalKm() + "\n" +
-                    ticket.getPrice();
+            return  "Ticket ID: " + ticket.getTicketId() + "\n" +
+                    "Entrance Location: " + ticket.getEntranceLocation() + "\n" +
+                    "Exit Location: " + ticket.getExitLocation() + "\n" +
+                    "Status: " + ticket.getStatus() + "\n" +
+                    "Ticket Issue Time: " + ticket.getTicketIssueTime() + "\n" +
+                    "One Km Price: " + ticket.getOneKmPrice() + "\n" +
+                    "Total Km: " + ticket.getTotalKm() + "\n" +
+                    "Price: " + ticket.getPrice();
         }
-        return null;
     }
 
     @Override
@@ -59,18 +59,18 @@ public class TicketServiceIMPL implements TicketServices {
             updateTicket.setPrice(ticketDTO.getOneKmPrice() * ticketDTO.getTotalKm());
             updateTicket.setVehicle(ticketDTO.getVehicle());
             ticketRepo.save(updateTicket);
-            return  updateTicket.getTicketId() + "\n" +
-                    updateTicket.getEntranceLocation() + "\n" +
-                    updateTicket.getExitLocation() + "\n" +
-                    updateTicket.getStatus() + "\n" +
-                    updateTicket.getTicketIssueTime() + "\n" +
-                    updateTicket.getOneKmPrice() + "\n" +
-                    updateTicket.getTotalKm() + "\n" +
-                    updateTicket.getPrice();
+            return  "Ticket ID: " + updateTicket.getTicketId() + "\n" +
+                    "Entrance Location: " + updateTicket.getEntranceLocation() + "\n" +
+                    "Exit Location: " + updateTicket.getExitLocation() + "\n" +
+                    "Status: " + updateTicket.getStatus() + "\n" +
+                    "Ticket Issue Time: " + updateTicket.getTicketIssueTime() + "\n" +
+                    "One Km Price: " + updateTicket.getOneKmPrice() + "\n" +
+                    "Total Km: " + updateTicket.getTotalKm() + "\n" +
+                    "Price: " + updateTicket.getPrice();
         }else{
             logger.info("This Id Have No Ticket");
+            return "This Id Have No Ticket";
         }
-        return null;
     }
 
     @Override
@@ -78,18 +78,18 @@ public class TicketServiceIMPL implements TicketServices {
 
         if (ticketRepo.existsById(ticketId)){
             TicketEntity ticket = ticketRepo.findById(ticketId).orElse(null);
-            return  ticket.getTicketId() + "\n" +
-                    ticket.getEntranceLocation() + "\n" +
-                    ticket.getExitLocation() + "\n" +
-                    ticket.getStatus() + "\n" +
-                    ticket.getTicketIssueTime() + "\n" +
-                    ticket.getOneKmPrice() + "\n" +
-                    ticket.getTotalKm() + "\n" +
-                    ticket.getPrice();
+            return "Ticket ID: " + ticket.getTicketId() + "\n" +
+                    "Entrance Location: " + ticket.getEntranceLocation() + "\n" +
+                    "Exit Location: " + ticket.getExitLocation() + "\n" +
+                    "Status: " + ticket.getStatus() + "\n" +
+                    "Ticket Issue Time: " + ticket.getTicketIssueTime() + "\n" +
+                    "One Km Price: " + ticket.getOneKmPrice() + "\n" +
+                    "Total Km: " + ticket.getTotalKm() + "\n" +
+                    "Price: " + ticket.getPrice();
         }else{
             logger.info("This Id Have No Ticket");
+            return "This Id Have No Ticket";
         }
-        return null;
     }
 
     @Override
