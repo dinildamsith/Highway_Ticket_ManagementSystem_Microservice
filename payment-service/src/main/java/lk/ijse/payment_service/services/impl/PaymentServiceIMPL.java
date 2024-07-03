@@ -33,6 +33,7 @@ public class PaymentServiceIMPL implements PaymentServices {
 
         if (paymentRepo.existsById(paymentDTO.getPaymentId())){
             logger.info("This Id Have Already Payment");
+            return "This Id Have Already Payment";
         }else {
 
             boolean alreadyTicketHaveCheck = restTemplate.getForObject("http://localhost:8082/api/v1/ticketService/ticketHaveCheck/"+paymentDTO.getTicket().getTicketId(), Boolean.class);
@@ -44,16 +45,18 @@ public class PaymentServiceIMPL implements PaymentServices {
 
                     restTemplate.postForObject("http://localhost:8082/api/v1/ticketService/statusUpdate/" + paymentDTO.getTicket().getTicketId(), null, String.class);
                     logger.info("Payment Success and Ticket Status Updated...");
+                    return "Payment Success and Ticket Status Updated...";
                 }else{
                     logger.info("This amount is insufficient to cover the payment");
+                    return "This amount is insufficient to cover the payment";
                 }
 
             }else{
                 logger.info("This Id Have No Ticket");
+                return "This Id Have No Ticket";
             }
 
 
         }
-        return null;
     }
 }

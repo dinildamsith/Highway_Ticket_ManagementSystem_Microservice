@@ -22,7 +22,7 @@ public class TicketEntity implements SuperEntity{
     private int totalKm;
     private Double price;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "vehicleId")  // Change the column name here
     private VehicleEntity vehicle;
 }

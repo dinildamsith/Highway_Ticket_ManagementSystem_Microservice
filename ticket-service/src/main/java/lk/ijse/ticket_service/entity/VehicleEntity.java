@@ -19,7 +19,7 @@ public class VehicleEntity implements SuperEntity{
     private String vehicleType;
 
 
-    @OneToMany(mappedBy = "vehicle")
+    @OneToMany(mappedBy = "vehicle" ,cascade = CascadeType.REMOVE)
     private List<TicketEntity> ticket;
 
 }
