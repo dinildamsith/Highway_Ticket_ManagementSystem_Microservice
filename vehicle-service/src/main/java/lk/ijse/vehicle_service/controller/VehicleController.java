@@ -21,20 +21,23 @@ public class VehicleController {
 
     @PostMapping
     @RequestMapping("/register")
-    public void registerVehicle(@RequestBody VehicleDTO vehicleDTO){
-        vehicleServices.registerVehicle(vehicleDTO);
+    public String registerVehicle(@RequestBody VehicleDTO vehicleDTO){
+        String resp = vehicleServices.registerVehicle(vehicleDTO);
+        return resp;
     }
 
     @PutMapping
     @RequestMapping("/update/{updateVehicleId}")
-    public void updateVehicle(@PathVariable ("updateVehicleId") String updateVehicleId , @RequestBody VehicleDTO vehicleDTO){
-        vehicleServices.updateVehicle(updateVehicleId,vehicleDTO);
+    public String updateVehicle(@PathVariable ("updateVehicleId") String updateVehicleId , @RequestBody VehicleDTO vehicleDTO){
+        String resp = vehicleServices.updateVehicle(updateVehicleId, vehicleDTO);
+        return resp;
     }
 
     @DeleteMapping
     @RequestMapping("/delete/{deleteVehicleId}")
-    public void deleteVehicle(@PathVariable ("deleteVehicleId") String deleteVehicleId){
-        vehicleServices.deleteVehicle(deleteVehicleId);
+    public String deleteVehicle(@PathVariable ("deleteVehicleId") String deleteVehicleId){
+        String resp = vehicleServices.deleteVehicle(deleteVehicleId);
+        return resp;
     }
 
     @GetMapping
