@@ -92,4 +92,10 @@ public class VehicleServiceIMPL implements VehicleServices {
         List<VehicleEntity> allVehicles = vehicleRepo.findAll();
         return dataConvert.vehicleEntityListConvertVehicleDTOList(allVehicles);
     }
+
+    @Override
+    public boolean checkingIfVehicleExists(String id) {
+        boolean existsByVehicle = vehicleRepo.existsById(id);
+        return existsByVehicle;
+    }
 }

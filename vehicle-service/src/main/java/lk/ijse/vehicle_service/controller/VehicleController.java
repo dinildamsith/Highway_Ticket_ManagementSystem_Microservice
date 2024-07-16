@@ -46,4 +46,12 @@ public class VehicleController {
         List<VehicleDTO> allVehicles = vehicleServices.getAllVehicles();
         return allVehicles;
     }
+
+    @GetMapping
+    @RequestMapping("/vehicleExists/{id}")
+    public boolean checkingIfVehicleExists(@PathVariable ("id") String id){
+        boolean vehicleExists = vehicleServices.checkingIfVehicleExists(id);
+        return vehicleExists;
+    }
+
 }

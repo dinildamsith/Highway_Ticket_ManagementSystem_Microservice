@@ -10,5 +10,6 @@ public interface VehicleServices {
      String updateVehicle(String updateVehicleId , VehicleDTO vehicleDTO);
      String deleteVehicle(String deleteVehicleId);
      List<VehicleDTO> getAllVehicles();
+     boolean checkingIfVehicleExists(String id);
 
 }
